@@ -6,7 +6,6 @@ import {
     Palette,
 } from "@react-buddy/ide-toolbox"
 import AntdPalette from "@react-buddy/palette-antd";
-import MUIPalette from "@react-buddy/palette-mui";
 
 export const PaletteTree = () => (
     <Palette>
@@ -18,7 +17,6 @@ export const PaletteTree = () => (
             </Component>
         </Category>
         <AntdPalette/>
-        <MUIPalette/>
     </Palette>
 )
 
