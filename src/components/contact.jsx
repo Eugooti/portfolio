@@ -23,11 +23,10 @@ export default function Contact() {
         } else {
             try {
                 const docRef = await addDoc(Collection, values);
-                console.log("Document written with ID: ", docRef.id);
-                messageApi.success("Document added successfully!");
+                messageApi.success("Message sent.").then(form.resetFields);
             } catch (error) {
                 console.error("Error adding document: ", error);
-                messageApi.error("Failed to add document. Please try again.");
+                messageApi.error("Failed to send. Please try again.");
             }
         }
     };
