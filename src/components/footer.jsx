@@ -1,14 +1,15 @@
 import { FaFacebook, FaInstagram, FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
+import {HashLink} from "react-router-hash-link";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     const links = [
-        { label: "Profile", ref: "#profile" },
-        { label: "Stack", ref: "#stack" },
-        { label: "Skills", ref: "#skills" },
-        { label: "Projects", ref: "#projects" },
-        { label: "Experience", ref: "#experience" },
+        { label: "Profile", ref: "/#profile" },
+        { label: "Stack", ref: "/#stack" },
+        { label: "Skills", ref: "/#skills" },
+        { label: "Projects", ref: "/#projects" },
+        { label: "Experience", ref: "/#experience" },
     ];
 
     return (
@@ -30,18 +31,18 @@ const Footer = () => {
                 <nav className="flex justify-center space-x-6 mb-6">
                     {links.map((item, index) => (
 
-                        <a
-                        href={item.ref}
+                        <HashLink
+                        to={item.ref}
                         key={index}
                         className="text-sm font-medium text-gray-500 hover:text-gray-900"
                         >
                     {item.label}
-                        </a>
+                        </HashLink>
                         ))}
                 </nav>
 
                 <div className="flex justify-center space-x-6 mb-6">
-                    <a href="#" className="text-gray-400 hover:text-gray-500">
+                    <a href="/" className="text-gray-400 hover:text-gray-500">
                         <span className="sr-only">Facebook</span>
                         <FaFacebook className="h-6 w-6" />
                     </a>

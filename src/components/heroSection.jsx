@@ -3,11 +3,8 @@
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import logo from '../assets/images/logez.png'
 import image from '../assets/images/TIM_6275.jpg'
-
-
-
+import {HashLink} from "react-router-hash-link";
 
 
 export default function HeroSection() {
@@ -15,12 +12,12 @@ export default function HeroSection() {
 
 
     const links=[
-        {label:"Profile",ref:"#profile"},
-        {label:"Stack",ref:"#stack"},
-        {label:"Skills",ref:"#skills"},
-        {label:"Projects",ref:"#projects"},
-        {label:"Experience",ref:"#Experience"},
-        {label:"Contact",ref:"#contact"},
+        {label:"Profile",ref:"/#profile"},
+        {label:"Stack",ref:"/#stack"},
+        {label:"Skills",ref:"/#skills"},
+        {label:"Projects",ref:"/#projects"},
+        {label:"Experience",ref:"/#Experience"},
+        {label:"Contact",ref:"/#contact"},
     ]
 
 
@@ -48,9 +45,9 @@ export default function HeroSection() {
                     </div>
                     <div className="hidden lg:flex lg:gap-x-12">
                         {links.map((item, index) => (
-                            <a key={index} href={item.ref} className="text-sm font-semibold leading-6 text-gray-900">
+                            <HashLink key={index} to={item.ref} className="text-sm font-semibold leading-6 text-gray-900">
                                 {item.label}
-                            </a>
+                            </HashLink>
                         ))}
                     </div>
 
@@ -63,13 +60,13 @@ export default function HeroSection() {
                     <div className="fixed inset-0 z-50" />
                     <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                         <div className="flex items-center justify-between">
-                            <a href="#" className="-m-1.5 p-1.5">
+                            <HashLink to='/' className="-m-1.5 p-1.5">
                                 <span className="sr-only">Your Company</span>
                                 <h1
                                     className="graffiti text-4xl text-white text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-yellow-500 to-red-500 drop-shadow-xl tracking-tight">
                                     E.O
                                 </h1>
-                            </a>
+                            </HashLink>
                             <button
                                 type="button"
                                 onClick={() => setMobileMenuOpen(false)}
@@ -83,13 +80,13 @@ export default function HeroSection() {
                             <div className="-my-6 divide-y divide-gray-500/10">
                                 <div className="space-y-2 py-6">
                                     {links.map((item,index) => (
-                                        <a
+                                        <HashLink
                                             key={index}
-                                            href={item.ref}
+                                            to={item.ref}
                                             className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                         >
                                             {item.label}
-                                        </a>
+                                        </HashLink>
                                     ))}
                                 </div>
                             </div>
@@ -127,7 +124,7 @@ export default function HeroSection() {
 
                         <div className="mt-10 flex items-center justify-center gap-x-6">
 
-                            <a href="#projects" className="text-sm rounded-md bg-indigo-600 font-semibold text-white shadow-sm leading-6 px-3.5 py-2.5 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                            <a href="/projects" className="text-sm rounded-md bg-indigo-600 font-semibold text-white shadow-sm leading-6 px-3.5 py-2.5 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                                 View my work <span aria-hidden="true">→</span>
                             </a>
 
