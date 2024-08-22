@@ -22,8 +22,8 @@ export default function Contact() {
             messageApi.warning("Agree to privacy policy");
         } else {
             try {
-                const docRef = await addDoc(Collection, values);
-                messageApi.success("Message sent.").then(form.resetFields);
+                 await addDoc(Collection, values);
+                messageApi.success("Message sent.").then(()=>form.resetFields());
             } catch (error) {
                 console.error("Error adding document: ", error);
                 messageApi.error("Failed to send. Please try again.");
