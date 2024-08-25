@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import image from '../assets/images/Dp.jpg'
+import image from '../assets/images/profile.png'
 import {HashLink} from "react-router-hash-link";
 
 

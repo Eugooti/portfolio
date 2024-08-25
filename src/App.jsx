@@ -11,17 +11,29 @@ import Experience from "./components/Experience.jsx";
 
 function App() {
     const [messageApi, contextHolder] = message.useMessage();
-
-
-    const [onlineStatus] = useState(window.navigator.onLine);
+    const [onlineStatus, setOnlineStatus] = useState(window.navigator.onLine);
 
     useEffect(() => {
-        if (!onlineStatus){
-            messageApi.warning("Connect to internet").then(()=>{
-                console.log(onlineStatus)
-            })
+        const handleOnline = () => setOnlineStatus(true);
+        const handleOffline = () => setOnlineStatus(false);
+
+        window.addEventListener('online', handleOnline);
+        window.addEventListener('offline', handleOffline);
+
+        // Cleanup event listeners on component unmount
+        return () => {
+            window.removeEventListener('online', handleOnline);
+            window.removeEventListener('offline', handleOffline);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (!onlineStatus) {
+            messageApi.warning("Connect to the internet").then(() => {
+                console.log(onlineStatus);
+            });
         }
-    }, [onlineStatus]);
+    }, [onlineStatus, messageApi]);
     return (
     <div>
         {contextHolder}
