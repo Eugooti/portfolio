@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import image from '../assets/images/TIM_6275.jpg'
+import image from '../assets/images/Dp.jpg'
 import {HashLink} from "react-router-hash-link";
 
 
@@ -16,7 +16,7 @@ export default function HeroSection() {
         {label:"Stack",ref:"/#stack"},
         {label:"Skills",ref:"/#skills"},
         {label:"Projects",ref:"/#projects"},
-        {label:"Experience",ref:"/#Experience"},
+        {label:"Experience",ref:"/#experience"},
         {label:"Contact",ref:"/#contact"},
     ]
 
@@ -45,7 +45,7 @@ export default function HeroSection() {
                     </div>
                     <div className="hidden lg:flex lg:gap-x-12">
                         {links.map((item, index) => (
-                            <HashLink key={index} to={item.ref} className="text-sm font-semibold leading-6 text-gray-900">
+                            <HashLink key={index} to={item.ref} className="text-sm  hover:scale-125 hover:border-b-2 hover:border-indigo-700 rounded hover:text-white font-semibold leading-6 text-gray-900">
                                 {item.label}
                             </HashLink>
                         ))}
@@ -116,15 +116,14 @@ export default function HeroSection() {
                         </h1>
                         <p className="text-lg text-gray-900 md:text-xl mb-6">
                             {/* eslint-disable-next-line react/no-unescaped-entities */}
-                            I'm a <span className="text-blue-500">Software Engineer</span> specializing in building (and
-                            {/* eslint-disable-next-line react/no-unescaped-entities */}
+                            I'm a <span className="text-blue-500">Software Engineer</span> specializing in building ( and
                             occasionally designing) exceptional digital experiences. I'm passionate about creating
                             solutions that improve and automate processes.
                         </p>
 
                         <div className="mt-10 flex items-center justify-center gap-x-6">
 
-                            <a href="/projects" className="text-sm rounded-md bg-indigo-600 font-semibold text-white shadow-sm leading-6 px-3.5 py-2.5 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                            <a href="/#projects" className="text-sm rounded-md bg-indigo-600 font-semibold text-white shadow-sm leading-6 px-3.5 py-2.5 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                                 View my work <span aria-hidden="true">→</span>
                             </a>
 

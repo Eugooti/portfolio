@@ -41,7 +41,7 @@ export default function Skills() {
                 <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">My Skills</h1>
                 <div
                     ref={ref1}
-                    className="mt-10 grid grid-cols-1 gap-y-5 sm:grid-cols-2 sm:gap-x-8 md:gap-x-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-5"
+                    className="mt-10 grid grid-cols-1 gap-y-5 sm:grid-cols-2 sm:gap-x-8 md:gap-x-12 lg:grid-cols-4 lg:gap-x-5 lg:gap-y-5"
                 >
                     {skills.map((skill, index) => (
                         <motion.div

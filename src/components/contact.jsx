@@ -43,7 +43,7 @@ export default function Contact() {
     }
 
     return (
-        <div className="relative  isolate py-10 md:px-6 md:py-6" id='contact'>
+        <div className="relative py-8 px-6 md:px-12 rounded-2xl overflow-hidden text-center" id='contact'>
         {contextHolder}
             <div
                 aria-hidden="true"

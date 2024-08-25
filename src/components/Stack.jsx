@@ -30,7 +30,7 @@ export default function TechStack() {
     ]
 
     return (
-        <div id={'stack'} className="py-16 md:px-6 md:py-20 text-center">
+        <div id={'stack'} className="relative py-8 px-6 md:px-12 rounded-2xl overflow-hidden">
 
             <div
                 aria-hidden="true"
@@ -45,7 +45,7 @@ export default function TechStack() {
                 />
             </div>
 
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl text-center px-6 lg:px-8">
                 <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">My Tech Stack.</h1>
 
                 <div
