@@ -2,6 +2,7 @@ import { Timeline } from "antd";
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import {RevealProvider} from "../context/Reveal.jsx";
 
 const Experience = () => {
     const { ref: ref1, inView: inView1 } = useInView({
@@ -26,8 +27,13 @@ const Experience = () => {
                 />
             </div>
 
-            <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-8">Experience</h2>
+            <div className="relative mx-auto max-w-7xl px-6 lg:px-8 ">
+                <div className='flex align-middle justify-center'>
+                    <RevealProvider>
+                        <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-8">Experience</h2>
+                    </RevealProvider>
+                </div>
+
                 <Timeline mode="alternate" className="space-y-6">
                     <Timeline.Item color="green" label="2022/09/01 - 2023/04/01">
                         <motion.div

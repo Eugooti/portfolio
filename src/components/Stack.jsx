@@ -11,6 +11,7 @@ import mongoDb from '../assets/images/MongoDB_Logo.svg'
 import java from '../assets/images/Java-logo-vector-01.svg'
 import javaScript from '../assets/images/Unofficial_JavaScript_logo_2.svg'
 import python from '../assets/images/python-3.svg'
+import {RevealProvider} from "../context/Reveal.jsx";
 
 export default function TechStack() {
 
@@ -30,7 +31,7 @@ export default function TechStack() {
     ]
 
     return (
-        <div id={'stack'} className="relative py-8 px-6 md:px-12 rounded-2xl overflow-hidden">
+        <div id={'stack'} className="relative py-10 px-6 md:px-12 rounded-2xl overflow-hidden">
 
             <div
                 aria-hidden="true"
@@ -45,8 +46,10 @@ export default function TechStack() {
                 />
             </div>
 
-            <div className="mx-auto max-w-7xl text-center px-6 lg:px-8">
-                <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">My Tech Stack.</h1>
+            <div className="mx-auto max-w-7xl px-6 lg:px-8 flex items-center justify-center flex-col">
+                <RevealProvider>
+                    <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-8">My Tech Stack.</h1>
+                </RevealProvider>
 
                 <div
                     className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-6">

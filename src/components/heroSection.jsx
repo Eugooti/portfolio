@@ -5,6 +5,7 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import image from '../assets/images/profile.png'
 import {HashLink} from "react-router-hash-link";
+import {RevealProvider} from "../context/Reveal.jsx";
 
 
 export default function HeroSection() {
@@ -112,18 +113,25 @@ export default function HeroSection() {
                     <div className=" text-start">
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">
                             {/* eslint-disable-next-line react/no-unescaped-entities */}
-                            Hi, I'm <span className="text-blue-500">Eugene Ochieng</span>
+                            <RevealProvider>
+                                Hi, I'm <span className="text-blue-500">Eugene Ochieng</span>
+                            </RevealProvider>
                         </h1>
-                        <p className="text-lg text-gray-900 md:text-xl mb-6">
-                            {/* eslint-disable-next-line react/no-unescaped-entities */}
-                            I'm a <span className="text-blue-500">Software Engineer</span> specializing in building ( and
-                            occasionally designing) exceptional digital experiences. I'm passionate about creating
-                            solutions that improve and automate processes.
-                        </p>
+                        <RevealProvider>
+                            <p className="text-lg text-gray-900 md:text-xl mb-6">
+                                {/* eslint-disable-next-line react/no-unescaped-entities */}
+                                I'm a <span className="text-blue-500">Software Engineer</span> specializing in building
+                                ( and
+                                occasionally designing) exceptional digital experiences. I'm passionate about creating
+                                solutions that improve and automate processes.
+                            </p>
+                        </RevealProvider>
+
 
                         <div className="mt-10 flex items-center justify-center gap-x-6">
 
-                            <a href="/#projects" className="text-sm rounded-md bg-indigo-600 font-semibold text-white shadow-sm leading-6 px-3.5 py-2.5 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                            <a href="/#projects"
+                               className="text-sm rounded-md bg-indigo-600 font-semibold text-white shadow-sm leading-6 px-3.5 py-2.5 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                                 View my work <span aria-hidden="true">→</span>
                             </a>
 

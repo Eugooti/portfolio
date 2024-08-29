@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import {RevealProvider} from "../context/Reveal.jsx";
 
 const projects = [
     {
@@ -70,8 +71,10 @@ export default function Projects() {
                 />
             </div>
 
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Projects</h2>
+            <div className="mx-auto max-w-7xl px-6 lg:px-8 flex items-center justify-center flex-col">
+                <RevealProvider>
+                    <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-8">Projects</h2>
+                </RevealProvider>
                 <motion.div
                     ref={ref2}
                     initial={{opacity: 0, y: 20}}

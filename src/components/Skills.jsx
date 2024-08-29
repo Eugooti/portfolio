@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import {RevealProvider} from "../context/Reveal.jsx";
 
 export default function Skills() {
     const { ref: ref1, inView: inView1 } = useInView({
@@ -37,8 +38,10 @@ export default function Skills() {
                 />
             </div>
 
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">My Skills</h1>
+            <div className="mx-auto max-w-7xl px-6 lg:px-8 flex items-center justify-center flex-col">
+                <RevealProvider>
+                    <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-8">My Skills</h1>
+                </RevealProvider>
                 <div
                     ref={ref1}
                     className="mt-10 grid grid-cols-1 gap-y-5 sm:grid-cols-2 sm:gap-x-8 md:gap-x-12 lg:grid-cols-4 lg:gap-x-5 lg:gap-y-5"

@@ -7,6 +7,7 @@ import {Form, Input, message} from "antd";
 import TextArea from "antd/es/input/TextArea.js";
 import {db} from "../config/firebase.config.js";
 import {addDoc,collection} from "firebase/firestore"
+import {RevealProvider} from "../context/Reveal.jsx";
 
 
 export default function Contact() {
@@ -57,11 +58,16 @@ export default function Contact() {
                     className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
                 />
             </div>
-            <div className="mx-auto max-w-2xl text-center">
-                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact Me</h2>
-                <p className="mt-2 text-lg leading-8 text-gray-600">
-                    Have a question or just want to connect? Feel free to reach out—I’d love to hear from you!
-                </p>
+            <div className="mx-auto max-w-2xl text-center flex items-center justify-center flex-col">
+                <RevealProvider>
+                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact Me</h2>
+                </RevealProvider>
+                <RevealProvider>
+                    <p className="mt-2 text-lg leading-8 text-gray-600">
+                        Have a question or just want to connect? Feel free to reach out—I’d love to hear from you!
+                    </p>
+                </RevealProvider>
+
             </div>
 
 
@@ -119,7 +125,7 @@ export default function Contact() {
                         className="min-w-0 border-2 border-purple-400 flex-auto rounded-md  bg-white/5 px-3.5 py-2  shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
                         rows={4}/>
                 </Form.Item>
-                <Form.Item label="Switch"  valuePropName="checked">
+                <Form.Item   valuePropName="checked">
                     <div className="flex h-6 items-center">
                         <Switch
                             checked={agreed}
